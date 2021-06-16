@@ -1,0 +1,264 @@
+.max-width {
+    width: 100%;
+    max-width: 1270px;
+    margin: 0 auto !important;
+}
+.flex-row {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+}
+.padding-15 {
+    padding: 0 15px 30px 15px;
+}
+.width-50 {
+    width: 50%;
+    height: auto;
+}
+.width-100 {
+    width: 100%;
+    height: auto;
+}
+
+.width-33 {
+    width: 33.3333333%;
+}
+.width-60 {
+    width: 60%;
+}
+.width-40 {
+    width: 40%;
+}
+.width-25 {
+    width: 25%;
+}
+.width-58 {
+    width: 58.8%;
+    margin: 0 auto;
+    text-align: center;
+}
+.width-41 {
+    width: 41.666666%;
+}
+@media only screen and (max-width: 550px) {
+    .width-50,
+    .width-33,
+    .width-60,
+    .width-40,
+    .width-41 {
+        width: 100%;
+    }
+    .width-25 {
+        width: 50%;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+.form-kinh-moi {
+    margin: 0 15px 30px 15px;
+    background-image: url("../../../img/orange-background.jpg");
+    padding: 30px;
+}
+
+.form-kinh-moi h4,
+.form-kinh-moi h3 {
+    color: #ffffff;
+}
+/* .box-image {
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+} */
+.image-cover {
+    padding-top: 56.25% !important;
+    position: relative;
+    height: auto;
+    /* overflow: hidden;
+    padding-top: 100%;
+    background-position: 50% 50%;
+    background-size: cover; */
+}
+.image-cover img {
+    height: 100%;
+    top: 0;
+    position: absolute;
+    object-fit: cover;
+}
+.box-text1 {
+    padding: 10px 10px 20px 10px;
+    color: #ffffff !important;
+}
+.box-text1 p {
+    color: #ffffff;
+}
+
+.border-radius-10 {
+    border-radius: 10px;
+}
+.object-fit {
+    object-fit: cover;
+}
+.display-block {
+    display: block;
+}
+.height-100 {
+    height: 100%;
+}
+.text-700-41-53 {
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 53px;
+}
+.text-700-27-35 {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 35px;
+}
+.text-700-24-38 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 38px;
+}
+.text-700-17-22 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 22px;
+}
+.text-400-12-18 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.text-600-16-17 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 17px;
+}
+.text-700-18-29 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29px;
+}
+.text-400-16-26 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.text-700-16-25 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.text-700-14-23 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 23px;
+}
+.text-700-16-26 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+}
+.dau-tu {
+    background-color: #666;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../../img/danko-city-tong-the-background.jpg");
+
+    padding: 30px 0;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    /* filter: brightness(50%); */
+}
+
+.box-text2 {
+    width: 58.8%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+}
+.box-text3 {
+    padding: 10px 0 20px 0;
+}
+.box-text3 p {
+    margin: 0.1em 0 0.1em 0;
+}
+.box-text4 p {
+    margin: 0;
+}
+.btn-tel {
+    background: none;
+    border: 2px solid #dd9933;
+    color: #dd9933;
+    font-family: "Lora";
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1em;
+    padding: 0 1.2em;
+}
+.btn-tel:hover {
+    background-color: #dd9933 !important;
+    color: #ffffff;
+}
+.margin-btn-10 {
+    margin: 0 0 10px 0;
+}
+.link {
+    text-decoration: none;
+}
+.link p {
+    margin: 0;
+}
+.tin-tuc {
+    margin-top: 30px;
+}
+.tin-tuc h3 {
+    margin: 0 15px 30px 15px;
+}
+.tin-tuc .text-700-41-53 {
+    margin: 0 15px 0.5em 15px;
+}
+.div-none {
+    width: 58.333333%;
+}
+.contact {
+    background-image: url("../../../img/footer_background.jpg");
+    padding: 30px 0;
+}
+.contact * {
+    color: #ffffff;
+    font-family: "Lora";
+}
+.contact-img {
+    width: 55%;
+    margin: 0 auto;
+    display: block;
+}
+.contact-img img {
+    border-radius: 7%;
+}
+.contact h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.contact h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 16px 0;
+}
+.icon-phone {
+    width: 25px;
+    height: 26px;
+    position: relative;
+    top: 7px;
+    margin-right: 12px;
+    -webkit-filter: invert(500%);
+    filter: invert(100%) brightness(200%);
+}
