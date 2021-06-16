@@ -66,3 +66,15 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 0.2em 1em;
     border-radius: 10px;
 }
+.ok-input {
+    margin: 20px 8px 0px 8px;
+    border: 2px solid #46b450;
+    padding: 0.2em 1em;
+    border-radius: 10px;
+}
+.err-input {
+    margin: 20px 8px 0px 8px;
+    border: 2px solid #ff0000;
+    padding: 0.2em 1em;
+    border-radius: 10px;
+}

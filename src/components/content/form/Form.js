@@ -8,6 +8,8 @@ const Form = ({ color, top, paddingMenu }) => {
     const [validateEmail, setValidateEmail] = useState(false);
     const [validatePhone, setValidatePhone] = useState(false);
     const [checkPhone, setCheckPhone] = useState(false);
+    const [ok, setOK] = useState(false);
+    const [err, setErr] = useState(true);
     const formUrl =
         "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfHYr_zZLQaVEhiScucV-oww75LUAXTOHhlixZMri-8ONajiA/formResponse";
     // const cors = "https://cors-anywhere.herokuapp.com/";
@@ -38,10 +40,12 @@ const Form = ({ color, top, paddingMenu }) => {
             responseType: "json",
         })
             .then(function (res) {
-                console.log("Ok");
+                setOK(true);
+                setErr(false);
             })
             .catch(function (e) {
-                console.log(e);
+                setErr(true);
+                setOK(false);
             });
     }
 
@@ -55,6 +59,7 @@ const Form = ({ color, top, paddingMenu }) => {
             setValidatePhone(!valiPhone);
         } else {
             setCheckPhone(true);
+            setValidatePhone(false);
         }
         if (valiEmail && valiPhone && phone) {
             submitGoogleForms();
@@ -94,7 +99,7 @@ const Form = ({ color, top, paddingMenu }) => {
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Điện thoại liên hệ"
             />
-            {validatePhone ? <p>Mục này là bắt buộc.</p> : <Fragment />}
+            {validatePhone ? <p>Số điện thoại không hợp lệ.</p> : <Fragment />}
             {checkPhone ? <p>Mục này là bắt buộc.</p> : <Fragment />}
             <button type="submit">ĐĂNG KÝ TƯ VẤN</button>
 
@@ -102,6 +107,21 @@ const Form = ({ color, top, paddingMenu }) => {
                 <div className="error-input">
                     Có một hoặc nhiều mục nhập có lỗi. Vui lòng kiểm tra và thử
                     lại.
+                </div>
+            ) : (
+                <Fragment />
+            )}
+            {ok && !validateEmail && !validatePhone && !checkPhone ? (
+                <div className="ok-input">
+                    Xin cảm ơn, form đã được gửi thành công.
+                </div>
+            ) : (
+                <Fragment />
+            )}
+            {err && !validateEmail && !validatePhone && !checkPhone ? (
+                <div className="err-input">
+                    Đã sảy ra lỗi, bạn vui lòng gửi lại thông tin cho chung tôi.
+                    Xin cảm ơn!
                 </div>
             ) : (
                 <Fragment />
