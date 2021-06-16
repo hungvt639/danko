@@ -10,12 +10,11 @@ const Form = ({ color, top, paddingMenu }) => {
     const [checkPhone, setCheckPhone] = useState(false);
     const formUrl =
         "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfHYr_zZLQaVEhiScucV-oww75LUAXTOHhlixZMri-8ONajiA/formResponse";
-    const cors = "https://cors-anywhere.herokuapp.com/";
-    const config = {
-        cors: "https://cors-anywhere.herokuapp.com/", // <optional> doesn't display the cors error
-        formUrl:
-            "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfHYr_zZLQaVEhiScucV-oww75LUAXTOHhlixZMri-8ONajiA/formResponse",
-    };
+    // const cors = "https://cors-anywhere.herokuapp.com/";
+    // const config = {
+    //     cors: 'https://cors-anywhere.herokuapp.com/', // <optional> doesn't display the cors error
+    //     formUrl: 'https://docs.google.com/forms/d/e/<GOOGLE_FORM_ID>/formResponse'
+    //   };
     function fValidateEmail(email) {
         if (!email) return true;
         const re =
@@ -33,7 +32,7 @@ const Form = ({ color, top, paddingMenu }) => {
         formdata.append("entry.1398904860", email ? email : "");
         formdata.append("entry.689601757", phone);
         await axios({
-            url: `${config.cors}${config.formUrl}`,
+            url: `${formUrl}`,
             method: "post",
             data: formdata,
             responseType: "json",
