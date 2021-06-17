@@ -2,6 +2,14 @@
     font-family: Lora;
     src: url(Lora.ttf);
 }
+@font-face {
+    font-family: Noto Sans;
+    src: url(NotoSans-Bold.ttf);
+}
+@font-face {
+    font-family: Noto Sans R;
+    src: url(NotoSans-Regular.ttf);
+}
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Lora", sans-serif;

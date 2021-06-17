@@ -1,5 +1,5 @@
 // import Search from "antd/lib/transfer/search";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./news.css";
 import Right from "./Right";
 import TinTuc from "../index/TinTuc";
@@ -7,11 +7,22 @@ import tiendo from "../../../img/190521_1.png";
 import vitri1 from "../../../img/danko-city-vi-tri-01-1536x864.png";
 import top10 from "../../../img/top-10-du-an-nha-o-01.jpeg";
 import dankovinhyen from "../../../img/danko-vinh-yen-001.jpeg";
+import FormInfo from "../../forminfo/FormInfo";
 const News = ({ setHash }) => {
+    const [showForm, setShowForm] = useState(false);
     useEffect(() => {
-        document.title = "Lưu trữ tin tức - Danko City";
-        setHash("#/tin-tuc");
+        function setBefore() {
+            document.title = "Lưu trữ tin tức - Danko City";
+            setHash("#/tin-tuc");
+        }
+        setBefore();
     });
+    useEffect(() => {
+        let timer1 = setTimeout(() => setShowForm(true), 1000);
+        return () => {
+            clearTimeout(timer1);
+        };
+    }, []);
     const listTD = [
         {
             img: tiendo,
@@ -40,6 +51,7 @@ const News = ({ setHash }) => {
     ];
     return (
         <div>
+            <FormInfo showForm={showForm} setShowForm={setShowForm} />
             <div className="width-100 height-100px"></div>
             <div className="news max-width flex-row">
                 <div className="width75 news-right">

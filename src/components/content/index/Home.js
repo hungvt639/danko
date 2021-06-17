@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./header/Header";
 import tongquan from "../../../img/tongquan.jpg";
 import homatrong from "../../../img/danko-city-ho-mat-rong.jpg";
@@ -11,7 +11,6 @@ import dailo from "../../../img/fs.jpg";
 import matrong from "../../../img/ho-mat-rong.jpg";
 import btndownpdf from "../../../img/btn-dowloand-pdf.jpg";
 import brochure from "../../../brochure.pdf";
-import video from "../../../img/video.PNG";
 import luytien from "../../../img/luy-tien.jpg";
 import vitri from "../../../img/vi-tri.jpg";
 import docbanthietke from "../../../img/doc-ban-thiet-ke.jpg";
@@ -26,16 +25,25 @@ import TinTuc from "./TinTuc";
 import logo from "../../../img/danko-logo.png";
 import iconphone from "../../../img/phone_30px.png";
 import Footer from "../../footer/Footer";
+import FormInfo from "../../forminfo/FormInfo";
 const Home = ({ setHash }) => {
+    const [showForm, setShowForm] = useState(false);
     useEffect(() => {
-        document.title = "Danko City Thái Nguyên";
-    }, []);
-    useEffect(() => {
-        setHash("#/");
+        function setBefore() {
+            document.title = "Danko City Thái Nguyên";
+            setHash("#/");
+        }
+        setBefore();
     });
-    // console.log("hash", hash);
+    useEffect(() => {
+        let timer1 = setTimeout(() => setShowForm(true), 1000);
+        return () => {
+            clearTimeout(timer1);
+        };
+    }, []);
     return (
         <div>
+            <FormInfo showForm={showForm} setShowForm={setShowForm} />
             <Header />
             <div className="max-width">
                 <TongQuan />
@@ -208,7 +216,19 @@ const TienDo = () => {
                 </p>
             </div>
             <div className="width-40 padding-15">
-                <img className="width-100" src={video} alt="video" />
+                <div className="box-video">
+                    <p>
+                        <iframe
+                            src="https://www.youtube.com/embed/aWPN5yreMrI"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </p>
+                </div>
+
+                {/* <img className="width-100" src={video} alt="video" /> */}
             </div>
         </div>
     );
@@ -304,25 +324,25 @@ const TinTucs = () => {
             img: tiendo,
             text1: "Tiến độ dự án Danko City – Ngày 19/5/2021",
             text2: "25/05/2021",
-            url: "/tien-do-du-an-danko-city-ngay-19-5-2021",
+            url: "/tien-do-du-an-danko-city-ngay-19-5-2021/#top",
         },
         {
             img: vitri1,
             text1: "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ",
             text2: "24/05/2021",
-            url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty",
+            url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty/#top",
         },
         {
             img: top10,
             text1: "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021",
             text2: "24/05/2021",
-            url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021",
+            url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021/#top",
         },
         {
             img: dankovinhyen,
             text1: "Đất Nền Vĩnh Yên Vĩnh Phúc",
             text2: "24/05/2021",
-            url: "/dat-nen-vinh-yen-vinh-phuc",
+            url: "/dat-nen-vinh-yen-vinh-phuc/#top",
         },
     ];
     return (
@@ -330,6 +350,7 @@ const TinTucs = () => {
             <h3 style={{ color: "#ff6600" }}>TIN TỨC MỚI NHẤT</h3>
             <p className="text-700-41-53">Danko City</p>
             <TinTuc
+                // setShowForm={setShowForm}
                 // setHash={setHash}
                 lists={listTD}
                 cssText1="text-700-17-22"

@@ -1,17 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Right from "./Right";
 import mapaddress from "../../../img/danko-vinh-yen-vinh-phuc-09.png";
 import dankovinhyen from "../../../img/danko-vinh-yen-001.jpeg";
 import dankovinhyen2 from "../../../img/danko-vinh-yen-004.png";
 import dankodinhtrung from "../../../img/danko-dinh-trung-vinh-yen-vinh-phuc-002.png";
+import FormInfo from "../../forminfo/FormInfo";
+import NearPage from "./NearPae";
 const DatNenVinhYen = ({ setHash }) => {
+    const [showForm, setShowForm] = useState(false);
     useEffect(() => {
-        document.title = "Đất Nền Vĩnh Yên Vĩnh Phúc - Danko City";
-        setHash("#/tin-tuc");
+        function setBefore() {
+            document.title = "Đất Nền Vĩnh Yên Vĩnh Phúc - Danko City";
+            setHash("#/tin-tuc");
+        }
+        setBefore();
     });
+    useEffect(() => {
+        let timer1 = setTimeout(() => setShowForm(true), 1000);
+        return () => {
+            clearTimeout(timer1);
+        };
+    }, []);
+    const rightPage = {
+        url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021/#top",
+        name: "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021",
+    };
     return (
         <div>
-            <div className="width-100 height-100px"></div>
+            <FormInfo showForm={showForm} setShowForm={setShowForm} />
+            <div id="top" className="width-100 height-100px"></div>
             <div className="news max-width flex-row">
                 <div className="width75 news-content news-left">
                     <div className="news-content-head">
@@ -41,11 +58,11 @@ const DatNenVinhYen = ({ setHash }) => {
                         </p>
                         <img src={dankovinhyen} alt="Ảnh" />
                         <p>
-                            <h6>VỊ TRÍ</h6>
-                            Dự án Đất nền Vĩnh Yên nằm trên địa bàn xã Định
-                            Trung, tiến tới là Phường Định Trung theo quy hoạch
-                            xây dựng của tỉnh Vĩnh Phúc tầm nhìn 2030, mở rộng
-                            không gian đô thị của thành phố Vĩnh Yên.
+                            <span>VỊ TRÍ</span>
+                            <br /> Dự án Đất nền Vĩnh Yên nằm trên địa bàn xã
+                            Định Trung, tiến tới là Phường Định Trung theo quy
+                            hoạch xây dựng của tỉnh Vĩnh Phúc tầm nhìn 2030, mở
+                            rộng không gian đô thị của thành phố Vĩnh Yên.
                         </p>
                         <p>LỢI THẾ CỦA VĨNH YÊN</p>
                         <ol>
@@ -75,16 +92,17 @@ const DatNenVinhYen = ({ setHash }) => {
                             </li>
                         </ol>
                         <p>
-                            <h6>SẢN PHẨM</h6>Dự án Đất nền Vĩnh Yên bao gồm 2
-                            sản phẩm chính Liền kề và Nhà phố shophouse, chủ yếu
-                            mặt tiền 6m, diện tích 96m2 trừ một vài lô đặc biệt.
-                            Được xây 3 tầng.
+                            <span>SẢN PHẨM</span>
+                            <br />
+                            Dự án Đất nền Vĩnh Yên bao gồm 2 sản phẩm chính Liền
+                            kề và Nhà phố shophouse, chủ yếu mặt tiền 6m, diện
+                            tích 96m2 trừ một vài lô đặc biệt. Được xây 3 tầng.
                         </p>
                         <p>
-                            <h6>TIỆN ÍCH</h6>
-                            Dự án Đất nền Vĩnh Yên được quy hoạch đồng bộ với
-                            nhiều tiện ích đa dạng như quảng trường, công viên
-                            cây xanh, khu vui chơi trẻ em, bể bơi.
+                            <span>TIỆN ÍCH</span>
+                            <br /> Dự án Đất nền Vĩnh Yên được quy hoạch đồng bộ
+                            với nhiều tiện ích đa dạng như quảng trường, công
+                            viên cây xanh, khu vui chơi trẻ em, bể bơi.
                         </p>
                         <img src={dankovinhyen2} alt="Ảnh" />
                         <p>
@@ -92,8 +110,8 @@ const DatNenVinhYen = ({ setHash }) => {
                             điện đi ngầm toàn bộ. Hệ thống thoát nước đồng bộ.
                         </p>
                         <p>
-                            <h6>TIẾN ĐỘ</h6>
-                            Dự kiến khởi công vào Quý III, 2021
+                            <span>TIẾN ĐỘ</span>
+                            <br /> Dự kiến khởi công vào Quý III, 2021
                         </p>
                         <img src={dankodinhtrung} alt="Ảnh" />
                         <div className="img-dec">
@@ -112,6 +130,7 @@ const DatNenVinhYen = ({ setHash }) => {
                             </strong>
                         </p>
                     </div>
+                    <NearPage rightPage={rightPage} />
                 </div>
                 <Right />
             </div>

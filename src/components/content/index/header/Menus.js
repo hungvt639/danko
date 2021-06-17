@@ -31,7 +31,9 @@ const Menus = ({ show, setShow, hash }) => {
     return (
         <div className="menu width-100">
             <div className="header-top max-width">
-                <img src={logo} alt="Logo Danko" />
+                <a href="/">
+                    <img src={logo} alt="Logo Danko" />
+                </a>
 
                 <div className="bnt-menu width-100">
                     <div onClick={() => setShow(true)} className="bnt-menu-img">

@@ -10,7 +10,7 @@ const TinTuc = ({ lists, cssText1, cssText2, showDate }) => {
                         className="padding-15 width-33 position-relative"
                     >
                         <Link
-                            // onClick={() => setHash("#/tin-tuc")}
+                            // onClick={() => setShowForm(true)}
                             className="link"
                             to={t.url}
                         >

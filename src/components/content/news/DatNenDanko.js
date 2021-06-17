@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Right from "./Right";
 import vitri from "../../../img/vitri.png";
 import bietthu from "../../../img/danko-city-biet-thu-don-lap-00006.jpg";
@@ -6,15 +6,36 @@ import quangtruong from "../../../img/danko-city-quang-truong-00001.jpg";
 import quangtruong2 from "../../../img/danko-city-quang-truong-00002.jpg";
 import homatrong from "../../../img/danko-city-ho-mat-rong-00006.jpg";
 import plaza from "../../../img/danko-city-danko-plaza-00002-1.jpg";
+import FormInfo from "../../forminfo/FormInfo";
+import NearPage from "./NearPae";
 const DatNenDanko = ({ setHash }) => {
+    const [showForm, setShowForm] = useState(false);
     useEffect(() => {
-        document.title =
-            "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ - Danko City";
-        setHash("#/tin-tuc");
+        function setBefore() {
+            document.title =
+                "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ - Danko City";
+            setHash("#/tin-tuc");
+        }
+        setBefore();
     });
+    useEffect(() => {
+        let timer1 = setTimeout(() => setShowForm(true), 1000);
+        return () => {
+            clearTimeout(timer1);
+        };
+    }, []);
+    const leftPage = {
+        url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021/#top",
+        name: "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021",
+    };
+    const rightPage = {
+        url: "/tien-do-du-an-danko-city-ngay-19-5-2021/#top",
+        name: "Tiến độ dự án Danko City - Ngày 19/5/2021",
+    };
     return (
         <div>
-            <div className="width-100 height-100px"></div>
+            <FormInfo showForm={showForm} setShowForm={setShowForm} />
+            <div id="top" className="width-100 height-100px"></div>
             <div className="news max-width flex-row">
                 <div className="width75 news-content news-left">
                     <div className="news-content-head">
@@ -73,7 +94,8 @@ const DatNenDanko = ({ setHash }) => {
                         </p>
 
                         <p>
-                            <h6>VỊ TRÍ</h6>
+                            <span>VỊ TRÍ</span>
+                            <br />
                             Dự án khu đô thị Danko City nằm tại Phường Chùa
                             Hang, Thành phố Thái Nguyên. Dự án cách quảng trường
                             Võ Nguyên Giáp – quảng trường trung tâm Thành phố
@@ -124,7 +146,8 @@ const DatNenDanko = ({ setHash }) => {
                         </p>
 
                         <p>
-                            <h6>CHỦ ĐẦU TƯ</h6>
+                            <span>CHỦ ĐẦU TƯ</span>
+                            <br />
                             CÔNG TY CỔ PHẦN TẬP ĐOÀN DANKO
                             <br />
                             Trụ sở: Tầng 1, nhà C6, đường Trần Hữu Đức – Khu đô
@@ -142,7 +165,8 @@ const DatNenDanko = ({ setHash }) => {
                             Công, Thái Nguyên
                         </p>
                         <p>
-                            <h6>SẢN PHẨM</h6>
+                            <span>SẢN PHẨM</span>
+                            <br />
                             Danko City mang tới thị trường hơn 1.500 sản phẩm
                             bất động sản cao cấp. Bao gồm liền kề, biệt thự,
                             shophouse. Mặt tiền trung bình từ 6 tới 16 mét, diện
@@ -154,7 +178,8 @@ const DatNenDanko = ({ setHash }) => {
                             Cảnh quan 5 sao tại khu biệt thự đơn lập King Island
                         </div>
                         <p>
-                            <h6>TIỆN ÍCH</h6>
+                            <span>TIỆN ÍCH</span>
+                            <br />
                             Tiện ích nội khu đa dạng và đẳng cấp với Quảng
                             trường, sân khấu nhạc nước, công viên lớn, bể bơi,
                             bến du thuyền, trung tâm thương mại
@@ -199,17 +224,20 @@ const DatNenDanko = ({ setHash }) => {
                             </li>
                         </ul>
                         <p>
-                            <h6>PHƯƠNG THỨC THANH TOÁN</h6>
+                            <span>PHƯƠNG THỨC THANH TOÁN</span>
+                            <br />
                             Chính sách thanh toán linh động, 6 đợt trong 15
                             tháng, mỗi đợt cách nhau 3 tháng. Hoặc thanh toán
                             sớm 95% để nhận chiết khấu lên tới 10%.
                         </p>
                         <p>
-                            <h6>TIẾN ĐỘ</h6>
+                            <span>TIẾN ĐỘ</span>
+                            <br />
                             Tính tới tháng 4/2021. Dự kiến khu đô thị đi vào
                             hoạt động từ Quý IV, 2021.
                         </p>
                     </div>
+                    <NearPage leftPage={leftPage} rightPage={rightPage} />
                 </div>
                 <Right />
             </div>

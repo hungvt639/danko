@@ -1,17 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Right from "./Right";
 import top10 from "../../../img/top-10-du-an-nha-o-01.jpeg";
 import chugnhan from "../../../img/top-10-du-an-nha-o-03.jpg";
 import batdongsan from "../../../img/top-10-du-an-nha-o-02.jpeg";
+import FormInfo from "../../forminfo/FormInfo";
+import NearPage from "./NearPae";
 const DankoVinhDanh = ({ setHash }) => {
+    const [showForm, setShowForm] = useState(false);
     useEffect(() => {
-        document.title =
-            "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021 - Danko City";
-        setHash("#/tin-tuc");
+        function setBefore() {
+            document.title =
+                "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021 - Danko City";
+            setHash("#/tin-tuc");
+        }
+        setBefore();
     });
+    useEffect(() => {
+        let timer1 = setTimeout(() => setShowForm(true), 1000);
+        return () => {
+            clearTimeout(timer1);
+        };
+    }, []);
+    const leftPage = {
+        url: "/dat-nen-vinh-yen-vinh-phuc/#top",
+        name: "Đất Nền Vĩnh Yên Vĩnh Phúc",
+    };
+    const rightPage = {
+        url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty/#top",
+        name: "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ",
+    };
     return (
         <div>
-            <div className="width-100 height-100px"></div>
+            <FormInfo showForm={showForm} setShowForm={setShowForm} />
+            <div id="top" className="width-100 height-100px"></div>
             <div className="news max-width flex-row">
                 <div className="width75 news-content news-left">
                     <div className="news-content-head">
@@ -127,6 +148,7 @@ const DankoVinhDanh = ({ setHash }) => {
                             Thời điểm bàn giao: Quý III, 2021
                         </p>
                     </div>
+                    <NearPage leftPage={leftPage} rightPage={rightPage} />
                 </div>
                 <Right />
             </div>

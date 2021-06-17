@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Right from "./Right";
 import td1 from "../../../img/td1.png";
 import td2 from "../../../img/td2.png";
@@ -14,15 +14,33 @@ import td11 from "../../../img/td11.png";
 import td12 from "../../../img/td12.png";
 import td13 from "../../../img/td13.png";
 import td14 from "../../../img/td14.png";
+import FormInfo from "../../forminfo/FormInfo";
+import NearPage from "./NearPae";
+
 const TienDoDuAn = ({ setHash }) => {
+    const [showForm, setShowForm] = useState(false);
     useEffect(() => {
-        document.title =
-            "Tiến độ dự án Danko City – Ngày 19/5/2021 - Danko City";
-        setHash("#/tin-tuc");
+        function setBefore() {
+            document.title =
+                "Tiến độ dự án Danko City – Ngày 19/5/2021 - Danko City";
+            setHash("#/tin-tuc");
+        }
+        setBefore();
     });
+    useEffect(() => {
+        let timer1 = setTimeout(() => setShowForm(true), 1000);
+        return () => {
+            clearTimeout(timer1);
+        };
+    }, []);
+    const leftPage = {
+        url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty/#top",
+        name: "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ",
+    };
     return (
         <div>
-            <div className="width-100 height-100px"></div>
+            <FormInfo showForm={showForm} setShowForm={setShowForm} />
+            <div id="top" className="width-100 height-100px"></div>
             <div className="news max-width flex-row">
                 <div className="width75 news-content news-left">
                     <div className="news-content-head">
@@ -46,6 +64,7 @@ const TienDoDuAn = ({ setHash }) => {
                         <img src={td13} alt="Image13" />
                         <img src={td14} alt="Image14" />
                     </div>
+                    <NearPage leftPage={leftPage} />
                 </div>
                 <Right />
             </div>
