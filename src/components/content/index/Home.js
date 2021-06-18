@@ -32,6 +32,7 @@ const Home = ({ setHash }) => {
         function setBefore() {
             document.title = "Danko City Thái Nguyên";
             setHash("#/");
+            // window.scrollTo(0, 0);
         }
         setBefore();
     });
@@ -41,6 +42,8 @@ const Home = ({ setHash }) => {
             clearTimeout(timer1);
         };
     }, []);
+
+    // console.log(window);
     return (
         <div>
             <FormInfo showForm={showForm} setShowForm={setShowForm} />
@@ -221,9 +224,9 @@ const TienDo = () => {
                         <iframe
                             src="https://www.youtube.com/embed/aWPN5yreMrI"
                             title="YouTube video player"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
+                            allowFullScreen
                         ></iframe>
                     </p>
                 </div>
@@ -324,25 +327,25 @@ const TinTucs = () => {
             img: tiendo,
             text1: "Tiến độ dự án Danko City – Ngày 19/5/2021",
             text2: "25/05/2021",
-            url: "/tien-do-du-an-danko-city-ngay-19-5-2021/#top",
+            url: "/tien-do-du-an-danko-city-ngay-19-5-2021",
         },
         {
             img: vitri1,
             text1: "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ",
             text2: "24/05/2021",
-            url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty/#top",
+            url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty",
         },
         {
             img: top10,
             text1: "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021",
             text2: "24/05/2021",
-            url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021/#top",
+            url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021",
         },
         {
             img: dankovinhyen,
             text1: "Đất Nền Vĩnh Yên Vĩnh Phúc",
             text2: "24/05/2021",
-            url: "/dat-nen-vinh-yen-vinh-phuc/#top",
+            url: "/dat-nen-vinh-yen-vinh-phuc",
         },
     ];
     return (

@@ -12,6 +12,7 @@ const DankoVinhDanh = ({ setHash }) => {
             document.title =
                 "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021 - Danko City";
             setHash("#/tin-tuc");
+            window.scrollTo(0, 0);
         }
         setBefore();
     });
@@ -22,11 +23,11 @@ const DankoVinhDanh = ({ setHash }) => {
         };
     }, []);
     const leftPage = {
-        url: "/dat-nen-vinh-yen-vinh-phuc/#top",
+        url: "/dat-nen-vinh-yen-vinh-phuc",
         name: "Đất Nền Vĩnh Yên Vĩnh Phúc",
     };
     const rightPage = {
-        url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty/#top",
+        url: "/dat-nen-danko-city-xuat-ngoai-giao-chiet-khau-toi-12-ty",
         name: "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ",
     };
     return (

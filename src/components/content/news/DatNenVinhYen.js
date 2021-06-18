@@ -12,6 +12,7 @@ const DatNenVinhYen = ({ setHash }) => {
         function setBefore() {
             document.title = "Đất Nền Vĩnh Yên Vĩnh Phúc - Danko City";
             setHash("#/tin-tuc");
+            window.scrollTo(0, 0);
         }
         setBefore();
     });
@@ -22,7 +23,7 @@ const DatNenVinhYen = ({ setHash }) => {
         };
     }, []);
     const rightPage = {
-        url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021/#top",
+        url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021",
         name: "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021",
     };
     return (

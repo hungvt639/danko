@@ -1,5 +1,5 @@
 // import Search from "antd/lib/transfer/search";
-import React from "react";
+import React, { useState } from "react";
 import searchicon from "../../../img/search_30px.png";
 import { Link } from "react-router-dom";
 import tiendo from "../../../img/190521_1.png";
@@ -8,9 +8,21 @@ import top10 from "../../../img/top-10-du-an-nha-o-01.jpeg";
 import dankovinhyen from "../../../img/danko-vinh-yen-001.jpeg";
 import Form from "../form/Form";
 const Right = () => {
+    console.log(window.location);
+    function getSearch() {
+        const hash = escape(window.location.hash);
+        const index = hash.indexOf("s=");
+        if (index === -1) return "";
+        const search = hash.substring(index + 2);
+        return search.replaceAll("-", " ");
+    }
+
+    // console.log("s", );
+
+    const [value, setValue] = useState(getSearch());
     return (
         <div className="width25 border-left news-right">
-            <SearchForm />
+            <SearchForm value={value} setValue={setValue} />
             <TinTucMoiNhat />
             <NhanBaoGia />
         </div>
@@ -18,12 +30,28 @@ const Right = () => {
 };
 export default Right;
 
-const SearchForm = () => {
+const SearchForm = ({ value, setValue }) => {
+    function onSubmit(e) {
+        e.preventDefault();
+        return;
+    }
     return (
-        <form className="form search-form">
-            <input placeholder="Tìm kiếm thông tin" />
+        <form onSubmit={onSubmit} className="form search-form">
+            <input
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                placeholder="Tìm kiếm thông tin"
+            />
             <button type="submit">
-                <img src={searchicon} alt="Search" />
+                <Link
+                    to={{
+                        pathname: "/tin-tuc",
+
+                        search: value ? `?s=${value.replaceAll(" ", "-")}` : "",
+                    }}
+                >
+                    <img src={searchicon} alt="Search" />
+                </Link>
             </button>
         </form>
     );

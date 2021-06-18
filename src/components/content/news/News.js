@@ -14,6 +14,7 @@ const News = ({ setHash }) => {
         function setBefore() {
             document.title = "Lưu trữ tin tức - Danko City";
             setHash("#/tin-tuc");
+            window.scrollTo(0, 0);
         }
         setBefore();
     });

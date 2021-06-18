@@ -29,6 +29,7 @@ import {
 //     import("./components/content/news/TienDoDuAn")
 // );
 import Menus from "./components/content/index/header/Menus";
+import BackToTops from "./components/footer/BackToTop";
 // import FormInfo from "./components/forminfo/FormInfo";
 function App() {
     const [show, setShow] = useState(false);
@@ -109,6 +110,15 @@ function App() {
                         <Redirect to="/" />
                     </Switch>
                 </div>
+                <BackToTops />
+                {/* <BackToTop
+                    showOnScrollUp={false}
+                    showAt={20}
+                    speed={1500}
+                    easing="easeInOutQuint"
+                >
+                    Up
+                </BackToTop> */}
             </Router>
         </div>
     );

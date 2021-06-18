@@ -15,6 +15,7 @@ const DatNenDanko = ({ setHash }) => {
             document.title =
                 "Đất nền Danko City xuất ngoại giao chiết khấu tới 1,2 tỷ - Danko City";
             setHash("#/tin-tuc");
+            window.scrollTo(0, 0);
         }
         setBefore();
     });
@@ -25,11 +26,11 @@ const DatNenDanko = ({ setHash }) => {
         };
     }, []);
     const leftPage = {
-        url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021/#top",
+        url: "/danko-city-duoc-vinh-danh-top-10-du-an-do-thi-va-nha-o-tiem-nang-nhat-2021",
         name: "Danko City được vinh danh top 10 dự án đô thị và nhà ở tiềm năng nhất 2021",
     };
     const rightPage = {
-        url: "/tien-do-du-an-danko-city-ngay-19-5-2021/#top",
+        url: "/tien-do-du-an-danko-city-ngay-19-5-2021",
         name: "Tiến độ dự án Danko City - Ngày 19/5/2021",
     };
     return (
