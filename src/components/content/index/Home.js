@@ -24,7 +24,7 @@ import dankoprofile from "../../../img/z2510393917894_58d8d9968147769f92471f5382
 import TinTuc from "./TinTuc";
 import logo from "../../../img/danko-logo.png";
 import iconphone from "../../../img/phone_30px.png";
-import Footer from "../../footer/Footer";
+// import Footer from "../../footer/Footer";
 import FormInfo from "../../forminfo/FormInfo";
 const Home = ({ setHash }) => {
     const [showForm, setShowForm] = useState(false);
@@ -60,7 +60,7 @@ const Home = ({ setHash }) => {
                 <TinTucs />
             </div>
             <Contact />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
