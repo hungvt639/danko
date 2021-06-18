@@ -1,66 +1,3 @@
-.footer {
-    height: 50px;
-    background-color: #5b5b5b;
-}
-.back-to-tops {
-    /* display: none; */
-    transform: rotate(180deg);
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    padding: 10px;
-    border: 2px solid #535353;
-    border-radius: 50%;
-}
-.fWohKN {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.zalo {
-    display: block;
-    left: 30px;
-    bottom: 120px;
-    position: fixed;
-    z-index: 8000;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    font-size: 14px;
-    text-shadow: 1px 1px 0 #000;
-    border-radius: 40px;
-    cursor: pointer;
-    max-width: 250px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    background: #009dff;
-    display: flex;
-    flex-direction: row;
-}
-.zalo img {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-}
-.zalo span {
-    color: #ffffff;
-    margin: 0 15px 0 5px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    font-weight: 600;
-}
-.zalo a {
-    display: flex;
-    text-decoration: none;
-}
-.hot-phone {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 8001;
-}
 @keyframes quick-alo-circle-anim {
     0% {
         -webkit-transform: rotate(0) scale(0.5) skew(1deg);
@@ -112,6 +49,101 @@
         transform: rotate(0) scale(1) skew(1deg);
     }
 }
+.footer {
+    height: 50px;
+    background-color: #5b5b5b;
+}
+.back-to-tops {
+    /* display: none; */
+    transform: rotate(180deg);
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid #535353;
+    border-radius: 50%;
+}
+.fWohKN {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zalo {
+    bottom: 160px;
+    background: #009dff;
+    z-index: 8000;
+    left: 30px;
+}
+.fb {
+    bottom: 100px;
+    background: #1f449c;
+    z-index: 8000;
+    left: 30px;
+}
+.zalo,
+.viber,
+.fb {
+    display: block;
+    position: fixed;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-shadow: 1px 1px 0 #000;
+    border-radius: 40px;
+    cursor: pointer;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: row;
+}
+.zalo img,
+.fb img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+}
+.zalo span,
+.viber span,
+.fb span {
+    color: #ffffff;
+    margin: 0 15px 0 5px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+}
+.zalo a,
+.viber a,
+.fb a {
+    display: flex;
+    text-decoration: none;
+}
+.hot-phone {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 8002;
+}
+
+.viber {
+    left: 30px;
+    bottom: 220px;
+    z-index: 8005;
+    background: #66378b;
+}
+.viber img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(68deg)
+        brightness(110%) contrast(100%);
+    animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+}
+
 .hotline-phone-ring {
     position: relative;
     visibility: visible;

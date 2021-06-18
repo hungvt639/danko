@@ -2,6 +2,8 @@ import React from "react";
 // import "./index.css";
 import zaloicon from "../../img/zalo.png";
 import phone2 from "../../img/icon-phone2.png";
+import vibericon from "../../img/viber_32px.png";
+import fbicon from "../../img/fbicon.png";
 const Hotline = () => {
     return (
         <div className="hotline-phone">
@@ -21,6 +23,18 @@ const Hotline = () => {
                     </a>
                 </div>
             </div>
+            <div className="fb">
+                <a
+                    // without="true"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.facebook.com/%C4%90%E1%BA%A7u-t%C6%B0-danko-101265888876974"
+                >
+                    {" "}
+                    <img src={fbicon} alt="zalo" />
+                    <span>Facebook</span>
+                </a>
+            </div>
             <div className="zalo">
                 <a
                     // without="true"
@@ -31,6 +45,16 @@ const Hotline = () => {
                     {" "}
                     <img src={zaloicon} alt="zalo" />
                     <span>Chat Zalo</span>
+                </a>
+            </div>
+            <div className="viber">
+                <a
+                    href="viber://contact?number=%2B84969531916"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <img src={vibericon} alt="Viber" />
+                    <span>Viber</span>
                 </a>
             </div>
         </div>
