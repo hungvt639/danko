@@ -7,6 +7,7 @@ const Form = ({ color, top, paddingMenu, btn }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [checkName, setCheckName] = useState(false);
     const [validateEmail, setValidateEmail] = useState(false);
     const [validatePhone, setValidatePhone] = useState(false);
     const [checkPhone, setCheckPhone] = useState(false);
@@ -51,20 +52,15 @@ const Form = ({ color, top, paddingMenu, btn }) => {
 
     async function submitGoogleForms() {
         const formdata = new FormData();
-        formdata.append("entry.1143621888", name ? name : "");
-        formdata.append("entry.1398904860", email ? email : "");
-        formdata.append("entry.689601757", phone);
+        formdata.append("entry.518681509", name);
+        formdata.append("entry.1796644577", email ? email : "");
+        formdata.append("entry.1677124973", phone);
         // postData(formUrl, formdata);
 
         await axios({
             url: `${formUrl}`,
             data: formdata,
             method: "POST",
-            // mode: "no-cors",
-            // cache: "no-cache",
-            // credentials: "same-origin",
-            // redirect: "follow",
-            // referrerPolicy: "no-referrer",
         })
             .then(function () {
                 setOK(true);
@@ -102,6 +98,7 @@ const Form = ({ color, top, paddingMenu, btn }) => {
         e.preventDefault();
         const valiEmail = fValidateEmail(email);
         const valiPhone = fValidatePhone(phone);
+        setCheckName(!name);
         setValidateEmail(!valiEmail);
         if (phone) {
             setCheckPhone(false);
@@ -110,7 +107,7 @@ const Form = ({ color, top, paddingMenu, btn }) => {
             setCheckPhone(true);
             setValidatePhone(false);
         }
-        if (valiEmail && valiPhone && phone) {
+        if (valiEmail && valiPhone && phone && checkName) {
             submitGoogleForms();
         }
     }
@@ -134,6 +131,7 @@ const Form = ({ color, top, paddingMenu, btn }) => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Tên khách hàng"
             />
+            {checkName ? <p>Mục này là bắt buộc.</p> : <Fragment />}
             <input
                 className={validateEmail ? "input-err" : ""}
                 value={email}
@@ -156,7 +154,7 @@ const Form = ({ color, top, paddingMenu, btn }) => {
                 </button>
             </div>
 
-            {validateEmail || validatePhone || checkPhone ? (
+            {validateEmail || validatePhone || checkPhone || checkName ? (
                 <div className="error-input">
                     Có một hoặc nhiều mục nhập có lỗi. Vui lòng kiểm tra và thử
                     lại.
@@ -171,7 +169,11 @@ const Form = ({ color, top, paddingMenu, btn }) => {
             ) : (
                 <Fragment />
             )}
-            {err && !validateEmail && !validatePhone && !checkPhone ? (
+            {err &&
+            !validateEmail &&
+            !validatePhone &&
+            !checkPhone &&
+            checkName ? (
                 <div className="err-input">
                     Đã sảy ra lỗi, bạn vui lòng gửi lại thông tin cho chung tôi.
                     Xin cảm ơn!

@@ -26,7 +26,7 @@ const Hotline = () => {
                     // without="true"
                     rel="noopener noreferrer"
                     target="_blank"
-                    href="https://zalo.me/0987978613"
+                    href="https://zalo.me/0969531916"
                 >
                     {" "}
                     <img src={zaloicon} alt="zalo" />

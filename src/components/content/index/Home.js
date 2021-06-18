@@ -222,8 +222,8 @@ const TienDo = () => {
                 <div className="box-video">
                     <p>
                         <iframe
-                            src="https://www.youtube.com/embed/aWPN5yreMrI"
-                            title="YouTube video player"
+                            src="https://www.youtube.com/embed/DD5_8kCPaEA"
+                            title="DANKO CITY TỪ MÔ HÌNH ĐẾN THỰC TẾ"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
