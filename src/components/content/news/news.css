@@ -198,3 +198,16 @@
 .near-right {
     text-align: end;
 }
+.right-height-fix {
+    width: 100%;
+    height: 1px;
+}
+@media only screen and (max-width: 850px) {
+    .width25,
+    .width75 {
+        width: 100%;
+    }
+    .right-height-fix {
+        height: 200px;
+    }
+}

@@ -25,6 +25,7 @@ const Right = () => {
             <SearchForm value={value} setValue={setValue} />
             <TinTucMoiNhat />
             <NhanBaoGia />
+            <div className="right-height-fix" />
         </div>
     );
 };
