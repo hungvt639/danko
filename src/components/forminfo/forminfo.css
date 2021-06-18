@@ -33,8 +33,7 @@
     background-color: #efefef;
     font-family: "Noto Sans";
     position: relative;
-    z-index: 9999;
-    /* top: 25%; */
+    z-index: 9003;
     transition: all 0.2s ease-in-out;
     transform: translate(0, 0px);
 }
@@ -61,10 +60,8 @@
 .head-info div {
     padding: 5px 10px;
     text-align: center;
-    /* margin: auto; */
     color: #ffffff;
     background-color: #e09e1a;
-    /* height: 100%; */
     display: flex;
     align-items: center;
     justify-content: center;

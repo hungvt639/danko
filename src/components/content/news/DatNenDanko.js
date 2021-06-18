@@ -91,7 +91,7 @@ const DatNenDanko = ({ setHash }) => {
                             <br />
                             Thời điểm bàn giao: Quý III, 2021
                             <br />
-                            Hotline:090 4234 886
+                            Hotline: 096 9531 916
                         </p>
 
                         <p>
@@ -136,7 +136,7 @@ const DatNenDanko = ({ setHash }) => {
                             bộ, wifi phủ sóng toàn bộ, camera an ninh 24/7. –
                             Đóng tiền 6 đợt trong 15 tháng, vào hợp đồng chỉ từ
                             400 triệu, tính thanh khoản và tiềm năng tăng giá
-                            cao – Hotline ban kinh doanh: 090 4234 886
+                            cao – Hotline ban kinh doanh: 096 9531 916
                         </p>
                         <p>
                             Việc quy hoạch một khu đô thị cao cấp tại Thái

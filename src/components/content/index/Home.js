@@ -311,9 +311,9 @@ const DauTuSinhLoi = () => {
                     tiến độ 6 đợt trong 15 tháng không mất lãi.
                 </p>
                 <div className="width-58 padding-15">
-                    <a href="tel:0904234886" target="_self">
+                    <a href="tel:0969531916" target="_self">
                         <button className="text-700-24-38 btn-tel">
-                            GỌI NGAY 090 4234 886
+                            GỌI NGAY 096 9531 916
                         </button>
                     </a>
                 </div>
@@ -399,13 +399,13 @@ const Contact = () => {
                     <p className="text-400-16-26">
                         Với đội ngũ tư vấn chuyên nghiệp
                     </p>
-                    <a href="tel:0904234886" className="text-700-16-25 link">
+                    <a href="tel:0969531916" className="text-700-16-25 link">
                         <img
                             className="icon-phone"
                             src={iconphone}
                             alt="Phone"
                         />
-                        HOTLINE : 090 4234 886
+                        HOTLINE : 096 9531 916
                     </a>
                 </div>
 

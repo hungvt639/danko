@@ -13,6 +13,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import Footer from "./components/footer/Footer";
+import Hotline from "./components/footer/Hotline";
 // import { Drawer } from "antd";
 // import Header from "./components/header/Header";
 // const Home = React.lazy(() => import("./components/content/index/Home"));
@@ -122,6 +123,7 @@ function App() {
                 </BackToTop> */}
             </Router>
             <Footer />
+            <Hotline />
         </div>
     );
 }

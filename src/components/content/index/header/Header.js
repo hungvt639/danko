@@ -20,7 +20,7 @@ const Header = () => {
                             <img src={chietkhautoi} alt="Chiết khấu" />
                         </div>
                         <div className="head-call-now">
-                            <a href="tel:0904234886">
+                            <a href="tel:0969531916">
                                 <img src={goingay} alt="Gọi ngay" />
                             </a>
                         </div>
