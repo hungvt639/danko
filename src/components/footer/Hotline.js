@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 // import "./index.css";
 import zaloicon from "../../img/zalo.png";
 import phone2 from "../../img/icon-phone2.png";
 import vibericon from "../../img/viber_32px.png";
 import fbicon from "../../img/fbicon.png";
+import up from "../../img/double_up_32px.png";
 const Hotline = () => {
+    const [show, setShow] = useState(false);
     return (
         <div className="hotline-phone">
             <div className="hot-phone">
@@ -23,7 +25,9 @@ const Hotline = () => {
                     </a>
                 </div>
             </div>
-            <div className="fb">
+
+            {/* <div className={show ? "mess" : "mess height-0"}> */}
+            <div className={show ? "fb" : "fb height-0"}>
                 <a
                     // without="true"
                     rel="noopener noreferrer"
@@ -35,7 +39,7 @@ const Hotline = () => {
                     <span>Facebook</span>
                 </a>
             </div>
-            <div className="zalo">
+            <div className={show ? "zalo" : "zalo height-0"}>
                 <a
                     // without="true"
                     rel="noopener noreferrer"
@@ -47,7 +51,7 @@ const Hotline = () => {
                     <span>Chat Zalo</span>
                 </a>
             </div>
-            <div className="viber">
+            <div className={show ? "viber" : "viber height-0"}>
                 <a
                     href="viber://contact?number=%2B84969531916"
                     rel="noopener noreferrer"
@@ -57,6 +61,19 @@ const Hotline = () => {
                     <span>Viber</span>
                 </a>
             </div>
+            {/* </div> */}
+
+            <div
+                onClick={() => setShow(true)}
+                className={!show ? "show" : "display-none"}
+            >
+                <img src={up} alt="up" /> <span>Mạng xã hội</span>
+            </div>
+
+            <div
+                onClick={() => setShow(false)}
+                className={show ? "close-show-menu" : "display-none"}
+            />
         </div>
     );
 };
