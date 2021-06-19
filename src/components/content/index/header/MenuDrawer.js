@@ -52,9 +52,12 @@ const MenuDrawer = ({ show, setShow }) => {
                         </Link>
                     </li>
                     <li>
-                        <Link onClick={close} to="/tin-tuc">
+                        <a
+                            onClick={close}
+                            href="https://tintucdanko.blogspot.com/"
+                        >
                             <p>Tin tức</p>
-                        </Link>
+                        </a>
                     </li>
                     <li>
                         <Link to="/#lien-he" onClick={close}>

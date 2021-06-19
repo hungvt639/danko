@@ -95,7 +95,7 @@ const Menus = ({ show, setShow, hash }) => {
                         Tiến độ
                     </Link>
 
-                    <Link
+                    <a
                         onMouseOver={() => setHover(6)}
                         onMouseOut={() => setHover(0)}
                         // onClick={() => setHash("#/tin-tuc")}
@@ -104,10 +104,10 @@ const Menus = ({ show, setShow, hash }) => {
                                 ? "menu-link text-700-14-23 menu-link-after"
                                 : "menu-link text-700-14-23"
                         }
-                        to="/tin-tuc"
+                        href="https://tintucdanko.blogspot.com/"
                     >
                         Tin tức
-                    </Link>
+                    </a>
                     <Link
                         onMouseOver={() => setHover(5)}
                         onMouseOut={() => setHover(0)}
