@@ -65,7 +65,7 @@ const Hotline = () => {
 
             <div
                 onClick={() => setShow(true)}
-                className={!show ? "show" : "display-none"}
+                className={!show ? "show" : "show width-0"}
             >
                 <img src={up} alt="up" /> <span>Mạng xã hội</span>
             </div>

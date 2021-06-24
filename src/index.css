@@ -10,6 +10,10 @@
     font-family: Noto Sans R;
     src: url(NotoSans-Regular.ttf);
 }
+/* @font-face {
+    font-family: Arial;
+    src: url(NotoSans-Regular.ttf);
+} */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Lora", sans-serif;
