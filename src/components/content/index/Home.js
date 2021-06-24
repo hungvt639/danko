@@ -109,9 +109,9 @@ const FormKinhMoi = () => {
                 <h4>Tiệc trà khám phá cơ hội đầu tư</h4>
                 <h3>08:30 NGÀY 30/05, VĂN PHÒNG DỰ ÁN DANKO CITY</h3> */}
                 <h4 style={{ marginTop: "5px" }} className="h4s">
-                    hỗ trợ vay 50% vốn ngân hàng
+                    Hỗ trợ vay 50% vốn ngân hàng
                 </h4>
-                <h4 className="h4s">lãi xuất 0% trong 18 tháng</h4>
+                <h4 className="h4s">Lãi xuất 0% trong 18 tháng</h4>
                 <h3 style={{ marginBottom: "10px" }} className="h4s">
                     ÂN HẠN NỢ GỐC
                 </h3>
